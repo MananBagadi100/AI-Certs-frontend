@@ -17,9 +17,18 @@ function App() {
     const fetchVersions = async () => {
         try {
             const res = await api.get("/versions");
+
+            // Safety check as backend must return an array (prevents crashing)
+            if (!Array.isArray(res.data)) {
+                console.error("Unexpected response format:", res.data);
+                setVersions([]);
+                return;
+            }
+
             setVersions(res.data);
         } catch (error) {
             console.log("Error fetching versions:", error);
+            setVersions([]); // Prevent frontend crash
         }
     };
 
