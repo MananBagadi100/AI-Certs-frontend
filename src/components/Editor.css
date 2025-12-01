@@ -1,0 +1,38 @@
+.editor-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.editor-textarea {
+    width: 100%;
+    min-height: 160px;
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #cfcfcf;
+    border-radius: 8px;
+    background: #ffffff;
+    outline: none;
+}
+
+.editor-textarea:focus {
+    border-color: #0077ff;
+    box-shadow: 0 0 4px rgba(0, 119, 255, 0.3);
+}
+
+.editor-btn {
+    width: 160px;
+    padding: 10px;
+    background: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.editor-btn:hover {
+    background: #005fcc;
+}
