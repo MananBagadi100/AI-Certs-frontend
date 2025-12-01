@@ -13,7 +13,7 @@ function App() {
         fetchVersions();
     }, []);
 
-    // Fetch saved versions from backend
+    // Fetch saved versions from backend on every mount of react app
     const fetchVersions = async () => {
         try {
             const res = await api.get("/versions");
