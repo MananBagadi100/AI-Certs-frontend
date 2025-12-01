@@ -2,7 +2,7 @@ import { useState } from "react";
 import api from "../api";
 import "./Editor.css";
 
-function Editor({ onSave }) {
+function Editor({ onSave , onReset}) {
     const [text, setText] = useState("");
 
     // Send text to backend and save version
@@ -28,9 +28,14 @@ function Editor({ onSave }) {
             />
 
             {/* Trigger save version */}
-            <button className="editor-btn" onClick={handleSave}>
-                Save Version
-            </button>
+            <div className="editor-btn-area">
+                <button className="editor-save-btn" onClick={handleSave}>
+                    Save Version
+                </button>
+                <button className="editor-reset-history-btn" onClick={onReset}>
+                    Reset History
+                </button>
+            </div>
         </div>
     );
 }

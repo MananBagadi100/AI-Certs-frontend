@@ -32,9 +32,19 @@ function App() {
         }
     };
 
-    // Updating UI instantly when a new version is saved
+    // Updating UI instantly when a new version is saved (To prevent reloads)
     const handleSave = (newEntry) => {
         setVersions((prev) => [...prev, newEntry]);
+    };
+
+    // To handle the reset history button
+    const handleReset = async () => {
+        try {
+            await api.delete("/reset");
+            setVersions([]); // State updates the UI instantly
+        } catch (error) {
+            console.log("Error resetting history:", error);
+        }
     };
 
     return (
@@ -45,7 +55,7 @@ function App() {
             <div className="container">
                 <h1 className="title">Mini Audit Trail Generator</h1>
 
-                <Editor onSave={handleSave} />
+                <Editor onSave={handleSave} onReset={handleReset}/>
                 <HistoryList versions={versions} />
             </div>
         </>

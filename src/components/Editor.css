@@ -21,18 +21,43 @@
     box-shadow: 0 0 4px rgba(0, 119, 255, 0.3);
 }
 
-.editor-btn {
+.editor-btn-area {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 16px;
+}
+
+.editor-save-btn {
+    display: flex;
     width: 160px;
-    padding: 10px;
+    padding: 12px 12px;
     background: #0077ff;
     color: white;
     border: none;
     border-radius: 6px;
     font-size: 16px;
+    justify-content: center;
     cursor: pointer;
-    align-self: flex-start;
 }
 
-.editor-btn:hover {
+.editor-save-btn:hover {
     background: #005fcc;
+}
+
+.editor-reset-history-btn {
+    display: flex;
+    width: 160px;
+    padding: 12px 12px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.editor-reset-history-btn:hover {
+    background: #e60000;
 }
